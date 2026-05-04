@@ -201,7 +201,7 @@ export default function App() {
           }
         }}
       />
-      <AnimatePresence>
+      <AnimatePresence/>
         {showNotification && (
           <motion.div
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
