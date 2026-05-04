@@ -242,7 +242,7 @@ export default function App() {
           </motion.div>
         )}
       <AnimatePresence>
-        {isAppLoading && (
+        {(isAppLoading && typeof window !== 'undefined' && window.matchMedia("(pointer: coarse)").matches) && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
