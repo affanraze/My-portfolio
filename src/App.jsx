@@ -241,6 +241,42 @@ export default function App() {
             </button>
           </motion.div>
         )}
+      <AnimatePresence>
+        {isAppLoading && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            style={{
+              position: 'fixed',
+              inset: 0,
+              background: 'rgba(0,0,0,0.1)',
+              zIndex: 10000,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'progress',
+              pointerEvents: 'all'
+            }}
+          >
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
+              <img src="/icons/wait.png" alt="Loading" style={{ width: '32px', height: '32px' }} />
+              <div style={{ 
+                background: 'rgba(255,255,255,0.9)', 
+                padding: '4px 12px', 
+                borderRadius: '12px', 
+                border: '1px solid #0054E3',
+                fontSize: '11px',
+                fontWeight: 'bold',
+                color: '#0054E3',
+                boxShadow: '2px 2px 5px rgba(0,0,0,0.2)'
+              }}>
+                Please wait...
+              </div>
+            </div>
+          </motion.div>
+        )}
       </AnimatePresence>
     </div>
   );

@@ -12,9 +12,9 @@ export default function MyProjects({ onOpenProject }) {
   });
 
   return (
-    <div style={{ display: 'flex', height: '100%', fontFamily: 'Tahoma, sans-serif' }}>
+    <div className="my-projects-container" style={{ display: 'flex', height: '100%', fontFamily: 'Tahoma, sans-serif' }}>
       {/* Sidebar */}
-      <div style={{ width: '200px', background: 'linear-gradient(180deg, #7BA2E7 0%, #638BCE 100%)', display: 'flex', flexDirection: 'column', padding: '12px' }}>
+      <div className="my-projects-sidebar" style={{ width: '200px', background: 'linear-gradient(180deg, #7BA2E7 0%, #638BCE 100%)', display: 'flex', flexDirection: 'column', padding: '12px' }}>
         <div style={{ background: 'linear-gradient(180deg, #fff 0%, #E8EEF7 100%)', borderRadius: '4px 4px 0 0', padding: '4px 8px', border: '1px solid #fff', borderBottom: 'none', color: '#003399', fontWeight: 'bold', fontSize: '11px', display: 'flex', alignItems: 'center', gap: '4px' }}>
           My Projects Tasks
         </div>
@@ -41,7 +41,7 @@ export default function MyProjects({ onOpenProject }) {
       </div>
 
       {/* Main Content */}
-      <div style={{ flex: 1, background: '#fff', overflowY: 'auto', padding: '16px' }}>
+      <div className="my-projects-main" style={{ flex: 1, background: '#fff', overflowY: 'auto', padding: '16px' }}>
         <h2 style={{ color: '#000', fontSize: '16px', borderBottom: '1px solid #eee', paddingBottom: '8px', margin: '0 0 16px 0' }}>My Projects ({filteredProjects.length})</h2>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
           {filteredProjects.map(project => (
@@ -72,6 +72,14 @@ export default function MyProjects({ onOpenProject }) {
       <style>{`
         .project-folder-item:hover { background: rgba(49, 106, 197, 0.1); }
         .project-folder-item:active { background: rgba(49, 106, 197, 0.3); }
+        
+        @media (max-width: 600px) {
+          .my-projects-container { flex-direction: column !important; }
+          .my-projects-sidebar { width: 100% !important; border-right: none !important; border-bottom: 2px solid rgba(255,255,255,0.3) !important; }
+          .my-projects-main { padding: 10px !important; }
+          .project-folder-item { width: 100% !important; max-width: none !important; flex-direction: row !important; text-align: left !important; gap: 12px !important; padding: 8px !important; }
+          .project-folder-item div { width: 80px !important; height: 60px !important; flex-shrink: 0 !important; }
+        }
       `}</style>
     </div>
   );
