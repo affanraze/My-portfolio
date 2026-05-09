@@ -10,8 +10,8 @@ export default function MediaPlayer() {
           <iframe 
             width="100%" 
             height="100%" 
-            src="https://www.youtube.com/embed/iyIOl-s7JTU?autoplay=1" 
-            title="The Winner Takes It All" 
+            src="https://www.youtube.com/embed/9uW6B9LPntY?autoplay=1" 
+            title="Affan XP Showcase" 
             frameBorder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowFullScreen
@@ -19,7 +19,7 @@ export default function MediaPlayer() {
         ) : (
           <>
             <img 
-              src="https://img.youtube.com/vi/iyIOl-s7JTU/hqdefault.jpg" 
+              src="https://img.youtube.com/vi/9uW6B9LPntY/maxresdefault.jpg" 
               alt="Video Placeholder"
               style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.7 }}
             />
